@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   $("form").submit(function(event) {
 
@@ -10,6 +9,10 @@ $(document).ready(function() {
       alert("Equilateral");
     }
 
+    else if ((side1+side2)<=side3 || (side1+side3)<=side2 || (side2+side3)<=side1) {
+      alert ("Not triangle");
+    }
+
     else if (side1 === side2 || side2 === side3 || side1 === side3) {
       alert("Isosceles");
     }
@@ -17,9 +20,11 @@ $(document).ready(function() {
     else if (side1 !== side2 || side2 !== side3 || side1 !== side3) {
       alert("Scalene");
     }
+
     else {
-      alert("not a triangle");
+      alert("please enter a number");
     }
+
     event.preventDefault();
     });
   });
